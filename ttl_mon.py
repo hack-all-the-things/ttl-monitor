@@ -1,8 +1,6 @@
 #!/usr/bin/env python
-
 import pcapy
 import dpkt
-import sys
 from optparse import OptionParser
 from sys import exit, argv
 from socket import inet_ntoa, inet_aton
