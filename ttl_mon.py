@@ -1,4 +1,3 @@
-cat ttlmon.py
 #!/usr/bin/env python
 
 import pcapy
