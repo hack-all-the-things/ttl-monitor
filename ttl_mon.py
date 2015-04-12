@@ -37,6 +37,8 @@ def parse_ttl(hdr, data):
             iplayout_dict[ip.src][ip.data.sport] = ip.ttl
         elif iplayout_dict[ip.src][ip.data.sport] != ip.ttl:
             WARN("ROUTE CHANGED/FILTERED: %s:%d had a TTL of %d, but it changed to %d" % (inet_ntoa(ip.src),ip.data.sport, iplayout_dict[ip.src][ip.data.sport], ip.ttl))
+            iplayout_dict[ip.src][ip.data.sport] = ip.ttl
+
         if ip.ttl not in ttl_dict[ip.src]:
             DEBUG("New ttl for ip %s:%d (%d)" % (inet_ntoa(ip.src), ip.data.sport, ip.ttl))
             ttl_dict[ip.src][ip.ttl] = ip.data.sport
